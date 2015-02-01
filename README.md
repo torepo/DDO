@@ -15,6 +15,29 @@ I create some folders in this repository so that files are well organized. Youn 
 
 It should be noted, that I did this project step by step based on a task or solving problems that arise. So for that I create a folder called history. You can visit these folders if you want to know what the task is being done, the problem is happening.
 
+# DDO OVERVIEW
+
+As I said before, the main purpose of DDO is to simplify code writing when we want to interact with MySql. So that, DDO is dedicated for beginer. Surely, this object will have limited capability because of loosing flexsibility. But Mostly, for small projects we don't need flexibility. Instead, we need a simple line of code that easy to use.
+
+So take a look for the code above:
+
+```
+<?php
+
+$dbo = new DDO( $phost, $puser, $ppassword, $pdatabase );
+    
+$table = $my_dbo->select_table( $ptable_name );
+    
+$query = $my_dbo->create_query( $table, DDO::SELECT_QRY );
+$query->set_result( DDO::SINGLE_ROW, $str_ret_collum, $str_criteria );
+
+$row = $query->execute();
+
+?>
+
+```
+Does it looked easy and make sense? If the answer's yes. It will be a task to be done, and that is DDO intended for.  
+
 
 
 
