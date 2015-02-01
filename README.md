@@ -26,10 +26,10 @@ So take a look for the code above:
 
     $dbo = new DDO( $phost, $puser, $ppassword, $pdatabase );
     
-    $table = $my_dbo->select_table( $ptable_name );
+    $table = $dbo->select_table( $ptable_name );
     
-    $query = $my_dbo->create_query( $table, DDO::SELECT_QRY );
-    $query->set_result( DDO::SINGLE_ROW, $str_ret_collum, $str_criteria );
+    $query = $dbo->create_query( $table, DDO::SELECT_QRY );
+    $query->set_result( DDO::SINGLE_ROW, $pstr_ret_collum, $pstr_criteria );
 
     $row = $query->execute();
 
