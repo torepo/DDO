@@ -11,7 +11,7 @@ OK, I just call this dabase object DDO. There is no meaning, just a name..
 
 # REPOSITORY 
 
-I create some folders in this repository so that files are well organized. Youn can view the full description for each folder on file Repository-Structure.md
+I create some folders in this repository so that files are well organized. Youn can view the full description for each folder on file [repository structure.md](https://github.com/torepo/DDO/blob/master/repository%20structure.md)
 
 It should be noted, that I did this project step by step based on a task or solving problems that arise. So for that I create a folder called history. You can visit these folders if you want to know what the task is being done, the problem is happening.
 
