@@ -11,9 +11,12 @@ OK, I just call this dabase object MyDDO. There is no meaning, just a name..
 
 # MyDDO 
 
+```
 <?php
-   echo 'test';
+    echo 'Testing';
 ?>
+
+```
 
 
 
