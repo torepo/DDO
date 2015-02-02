@@ -39,7 +39,7 @@ So, I created:
     } 
 ?>
 
-1. ##### Creating Database
+##### 1. Creating Database
 
 My first attemps is to create 
 
