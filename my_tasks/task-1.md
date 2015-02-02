@@ -54,6 +54,7 @@ My first attemps is to achieve:
 
 For this purpose, DDO class would be:
 
+```
 <?php
 
     /** 
@@ -70,6 +71,7 @@ For this purpose, DDO class would be:
         }
     } 
 ?>
+```
 
 And the task is done..
 
