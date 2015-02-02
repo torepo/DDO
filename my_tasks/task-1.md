@@ -47,7 +47,7 @@ My first attemps is to achieve:
 
 ```
 
-// create database    
+//  create database    
     $dbo = new DDO( $phost, $puser, $ppassword, $pdatabase );
     
 ```
@@ -76,6 +76,63 @@ For this purpose, DDO class would be:
 And the task is done..
 
 **2. Select a table from database**
+
+Here is the goal:
+
+```
+// select a table from database
+   $table = $dbo->select_table( $ptable_name );
+   
+```
+
+For that purpose,
+
+1. Adding select_table method to DDO class.
+2. Select table means that DDO class have tables property. So, i will adding tables property into the class. This property will be an array that contain all tables in the database.
+
+Then, DDO class became:
+
+```
+<?php
+    /** 
+      *  DDO class for MySql Server
+      */
+    class DDO {
+        private $tables;    // an array of tables 
+    
+        public function __construct( $phost, $puser, $ppassword, $pdb_name ) {
+
+         // SET DATABASE PROPERTY...
+        $this->host = $phost;
+        $this->db_name = $pdb_name;
+        $this->user = $puser;
+        $this->password = $ppassword;
+        }
+        
+        // PICK A TABLE FROM DATABASE,
+        // RETURN AN TABLE OBJECT
+        public function select_table( $ptable_name ) {
+
+            foreach( $this->tables as $ltable ) {
+                if( $ltable->name == $ptable_name ) {
+                    return $this->selected_tables = $ltable;
+                } 
+           }
+       }
+    } 
+?>
+```
+
+So now, we just added tables property and select_table method to the class. 
+
+
+
+
+
+
+
+
+
 
 
 
