@@ -43,7 +43,39 @@ So, I created:
 
 **1. Creating Database**
 
-My first attemps is to create 
+My first attemps is to achieve:
+
+```
+
+// create database    
+    $dbo = new DDO( $phost, $puser, $ppassword, $pdatabase );
+    
+```
+
+For this purpose, DDO class would be:
+
+<?php
+
+    /** 
+      *  DDO class for MySql Server
+      */
+    class DDO {
+        public function __construct( $phost, $puser, $ppassword, $pdb_name ) {
+
+         // SET DATABASE PROPERTY...
+        $this->host = $phost;
+        $this->db_name = $pdb_name;
+        $this->user = $puser;
+        $this->password = $ppassword;
+        }
+    } 
+?>
+
+And the task is done..
+
+**2. Select a table from database**
+
+
 
 
 
