@@ -135,78 +135,26 @@ So now, we just added tables property and select_table method to the class. As y
 <?php
 
 class Tables {
+
     public $name;
-    public $fields;
-	
-	public function __construct( $p_name ) {
-	    //$this->set_fields( $p_fields );
-		$this->set_table_name( $p_name );
-	}
-	
-	private function set_table_name( $p_name ) {
-	    $this->name = $p_name;
+    private $fields;
+    private $selected_tables;
+
+    public function __construct( $pname ) {
+        $this->name = $pname;
     }
 
-	public function set_fields( $p_fields) {
-	    $this->fields = $p_fields;
-	}
-    
-	// THIS FUNCTION WILL CONSTRUCT STRING FIELD WITH FORM:
-	// 'FIELD_1, FIELD_2,...,FIELD_N'
-    private function get_string_field() {
-	    return implode( ', ', $this->fields );
-    }
-	
-	  // THIS FUNCTION WILL CONSTRUCT STRING PARAM WITH FORM:
-	  // '?, ?,...,?'
-	private function get_string_param() {
-	    $param = [];
-        for ( $i = 0; $i < count( $this->fields ); $i++ ) {
-            $param[ $i ] = ':'.$this->fields[ $i ];
-        }
-		 
-		return implode( ', ', $param );
+	public function set_fields( $pfields) {
+	    $this->fields = $pfields;
 	}
 
-    public function set_table_fields( $p_fields ) {
-        $this->fields = $p_fields;
-    }
-	
-	// FORM INSERT SQL STRING 
-    public function get_insert_sql() {
-	
-        $insert_sql = "INSERT INTO ".$this->name."(". $this->get_string_field().
-		    ") VALUES (".$this->get_string_param().")";
-			
-	    return $insert_sql;
-    }
-	
-	// FORM UPDATE SQL STRING
-	public function get_update_sql( $str_param, $str_criteria ) {
-
-        // $str_param FORM: 'FIELD_1=SOME VALUE, FIELD_2=SOME VALUE..
-        // $str_criteria FORM: 'FIELD_1=? AND FIELD_N=?; 
-        $update_sql = "UPDATE ".$this->name." SET ".$str_param." WHERE ".$str_criteria;
-
-        return $update_sql;
+	public function get_fields() {
+	    return $this->fields;
 	}
 
-    // CONSTRUCT DELETE TABLE DATA SQL
-    public function get_delete_sql( $str_critera ) {
-
-       $delete_sql = "DELETE*FROM ".$this->name." WHERE ".$str_criteria;
-
-       return $delete_sql;
-    }
-
-    // CONSTRUCT SELECT TABLE DATA SQL
-    public function get_select_sql( $str_field, $str_criteria ) {
-    
-        $select_sql = "SELECT ".$str_field." FROM ".$this->name." WHERE ".$str_criteria;
-        
-        return $select_sql;
-    }
 }
+
+?>
 
 ```
 
